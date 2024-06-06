@@ -1,0 +1,23 @@
+<h1>상세보기</h1>
+<div>
+    <br/>
+    <div align="center">
+        <form th:action="@{/edit/{no} (no=${post.no})}" th:method="post">
+            <div class="form-group" align="left">
+                <div th:text="'글 제목 : ' + ${post.title}"></div>
+                <br/>
+                <div th:text="'작성자 : ' + ${post.writer}"></div>
+                <br/>
+                <!--<label for="password">비밀번호 확인 : </label>
+                <input type="password" id="password" name="password" width="200px">-->
+                <label for="content">글 내용 : </label>
+                <textarea id="content" name="content">[[${post.content}]]</textarea>
+                <br/>
+            </div>
+            <button type="submit" style="margin-right: 50px">수정</button>
+            <button th:formaction="@{/delete/{no} (no=${post.no})}" type="submit">삭제</button>
+        </form>
+    </div>
+</div>
+<!--<textarea id="content" name="content">[[${post.content}]]</textarea>-->
+<button th:onclick="|location.href='@{/list}'|">목록으로</button>

@@ -1,0 +1,32 @@
+<div>
+    <br/>
+    <div align="right" style="margin-right: 100px">
+        <button th:onclick="|location.href='@{/}'|">홈으로</button>
+        <button th:onclick="|location.href='@{/write}'|">글쓰기</button>
+    </div>
+</div>
+<br/>
+<div th:fragment="list">
+    <table border="1" width="1100" align="center">
+        <thead>
+        <tr>
+            <th width="50">No.</th>
+            <th width="550">제목</th>
+            <th width="200">작성자</th>
+            <th width="200">생성일</th>
+            <th width="200">최근 수정일</th>
+            <th width="200">글 보기/수정/삭제</th>
+        </tr>
+        </thead>
+        <tbody align="center">
+        <tr th:each="post: ${contents}">
+            <td th:text="${post.no}"></td>
+            <td th:text="${post.title}"></td>
+            <td th:text="${post.writer}"></td>
+            <td th:text="${post.create_date}"></td>
+            <td th:text="${#strings.defaultString(post.update_date, '-')}"></td>
+            <td> <button th:onclick="|location.href='@{/view/}'+${post.no}|" style="height:40px;">보기</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
