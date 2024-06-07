@@ -1,7 +1,7 @@
 package com.springboot.toyproject.controller;
 
+import com.springboot.toyproject.repository.BoardTransaction;
 import com.springboot.toyproject.service.BoardService;
-import com.springboot.toyproject.vo.BoardVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,9 +21,9 @@ public class BoardController {
         return "include/board_layout";
     }
 
-    @GetMapping("/view/{no}")
-    public String getViewPage(@PathVariable("no") int no, Model model) {
-        model.addAttribute("post", boardService.view(no));
+    @GetMapping("/view/{postNo}")
+    public String getViewPage(@PathVariable("postNo") int postNo, Model model) {
+        model.addAttribute("post", boardService.view(postNo));
         return "board/view";
     }
 
@@ -33,14 +33,14 @@ public class BoardController {
     }
 
     @PostMapping("/write")
-    public String write(BoardVO boardVO){
+    public String write(BoardTransaction.BoardVO boardVO){
         boardService.write(boardVO);
         return "redirect:/list";
     }
 
-    @PostMapping("/edit/{no}")
-    public String edit(@PathVariable("no") int no, BoardVO boardVO){
-        boardService.edit(no, boardVO);
+    @PostMapping("/edit/{postNo}")
+    public String edit(@PathVariable("postNo") int postNo, BoardTransaction.BoardVO boardVO){
+        boardService.edit(postNo, boardVO);
         return "redirect:/list";
     }
 

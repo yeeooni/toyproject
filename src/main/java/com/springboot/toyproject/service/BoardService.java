@@ -1,19 +1,19 @@
 package com.springboot.toyproject.service;
 
-import com.springboot.toyproject.vo.BoardVO;
+import com.springboot.toyproject.repository.BoardTransaction;
 
 import java.util.List;
 
 public interface BoardService {
 
-    List<BoardVO> list();
+    List<BoardTransaction.BoardVO> list();
 
-    BoardVO view(int id);
+    BoardTransaction.BoardVO view(int postNo);
 
-    void write(BoardVO boardVO);
+    void write(BoardTransaction.BoardVO boardVO);
 
-    void edit(int no, BoardVO boardVO);
+    void edit(int postNo, BoardTransaction.BoardVO boardVO);
 
-    void delete(int no);
+    void delete(int postNo);
 
 }
