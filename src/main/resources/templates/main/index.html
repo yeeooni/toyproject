@@ -1,4 +1,21 @@
-이곳은 메인페이지 입니다.<br/>
-야구 정보를 실시간으로 업데이트하여 정보를 보여줍니다.
+<th:block th:replace="fragments/config"/>
+<body>
+<!-- 상단 메뉴바 불러오기 -->
+<div th:replace="fragments/header :: header"></div>
+<!-- 메인 콘텐츠 영역 -->
+<section class="main-content">
+    <div class="main-banner">
+        <img th:src="@{/images/kia_tigers_banner.png}" alt="KIA Tigers Banner" class="banner-img">
+        <h1>⚾️ 기아 타이거즈 정보 공유 사이트</h1>
+        <p>(갸봐) 기아 타이거즈의 정보들을 함께 알아봐요.</p>
+        <button onclick="alert('개발 중 입니다.')">더 알아보기</button>
+    </div>
+</section>
+<!-- 메인 게시판 영역 -->
+<!-- 하단 푸터 불러오기 -->
+<div th:replace="fragments/footer :: footer"></div>
+</body>
 
-<button th:onclick="|location.href='@{/list}'|">게시판으로 이동</button>
+
+
+

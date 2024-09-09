@@ -1,24 +1,35 @@
-<h1>상세보기</h1>
+<th:block th:replace="fragments/config"/>
+<body>
+<!-- 상단 메뉴바 불러오기 -->
+<div th:replace="fragments/header :: header"></div>
 
-<div>
-    <br/>
-    <div align="center">
-        <form th:action="@{/edit/{postNo} (no=${post.postNo})}" th:method="post">
-            <div class="form-group" align="left">
-                <div th:text="'제목: ' + ${post.title}"></div>
-                <br/>
-                <div th:text="'작성자: ' + ${post.writer}"></div>
-                <br/>
-                <!--<label for="password">비밀번호 확인 : </label>
-                <input type="password" id="password" name="password" width="200px">-->
-                <label for="content">내용: </label>
-                <textarea id="content" name="content">[[${post.content}]]</textarea>
-                <br/>
-            </div>
-            <button type="submit" style="margin-right: 50px">수정</button>
-            <button th:formaction="@{/delete/{postNo} (no=${post.postNo})}" type="submit">삭제</button>
-        </form>
+<section class="post-detail">
+    <h2>게시글 상세 보기</h2>
+    <table>
+        <tr>
+            <th>제목</th>
+            <td th:text="${post.title}"></td>
+        </tr>
+        <tr>
+            <th>작성자</th>
+            <td th:text="${post.writer}"></td>
+        </tr>
+        <tr>
+            <th>작성일</th>
+            <td th:text="${post.create_date}"></td>
+        </tr>
+        <tr>
+            <th>내용</th>
+            <td th:utext="${post.content}"></td>
+        </tr>
+    </table>
+    <div class="button-group">
+        <button class="action-btn" id="edit-btn" onclick="toggleEdit();">수정</button>
+        <button onclick="showMessage();">삭제</button>
+        <button th:onclick="|location.href='@{/board/list}'|">목록으로</button>
     </div>
-</div>
-<!--<textarea id="content" name="content">[[${post.content}]]</textarea>-->
-<button th:onclick="|location.href='@{/list}'|">목록으로</button>
+</section>
+
+<!-- 하단 푸터 불러오기 -->
+<div th:replace="fragments/footer :: footer"></div>
+</body>
