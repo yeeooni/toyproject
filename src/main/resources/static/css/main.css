@@ -1,0 +1,106 @@
+@import url('board.css');
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 헤더 및 네비게이션 바 */
+header {
+    background-color: #000000;
+    padding: 10px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-bar {
+    list-style: none;
+    text-align: center;
+}
+
+.nav-bar li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-bar a {
+    color: white; /* 텍스트는 흰색 */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav-bar a:hover {
+    text-decoration: underline;
+}
+
+/* 메인 컨텐츠 */
+.main-content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* 메인 배너 */
+.main-banner {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 이미지 크기 조정 */
+.banner-img {
+    width: 100%;  /* 반응형으로 화면에 맞게 조정 */
+    max-width: 800px; /* 최대 너비 제한 */
+    height: auto;     /* 비율 유지 */
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.main-banner h1 {
+    font-size: 36px;
+    color: #C60000; /* 타이거즈 레드 */
+}
+
+.main-banner p {
+    font-size: 18px;
+    color: #555;
+}
+
+.main-banner button {
+    /*padding: 10px 20px;*/
+    background-color: #000000; /* 블랙 버튼 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.main-banner button:hover {
+    background-color: #333333;
+}
+
+/* 푸터 */
+footer {
+    background-color: #C60000; /* 레드 */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 14px;
+}

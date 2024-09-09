@@ -1,32 +1,45 @@
-<div>
-    <br/>
-    <div align="right" style="margin-right: 100px">
-        <button th:onclick="|location.href='@{/}'|">홈으로</button>
-        <button th:onclick="|location.href='@{/write}'|">글쓰기</button>
+<th:block th:replace="fragments/config"/>
+<body>
+<!-- 상단 메뉴바 불러오기 -->
+<div th:replace="fragments/header :: header"></div>
+
+<section class="board-content">
+    <div class="board-header">
+        <h2>게시판</h2>
     </div>
-</div>
-<br/>
-<div th:fragment="list">
-    <table border="1" width="1100" align="center">
-        <thead>
-        <tr>
-            <th width="50">No.</th>
-            <th width="550">제목</th>
-            <th width="200">작성자</th>
-            <th width="200">생성일</th>
-            <th width="200">최근 수정일</th>
-            <th width="200">보기/수정/삭제</th>
-        </tr>
-        </thead>
-        <tbody align="center">
-        <tr th:each="post: ${contents}">
-            <td th:text="${post.postNo}"></td>
-            <td th:text="${post.title}"></td>
-            <td th:text="${post.writer}"></td>
-            <td th:text="${post.create_date}"></td>
-            <td th:text="${#strings.defaultString(post.update_date, '-')}"></td>
-            <td> <button th:onclick="|location.href='@{/view/}'+${post.postNo}|" style="height:40px;">보기</button></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+
+    <div class="button-group">
+        <button th:onclick="|location.href='@{/}'|">홈으로</button>
+        <button th:onclick="|location.href='@{/board/write}'|">글쓰기</button>
+    </div>
+
+    <div class="board">
+        <table>
+            <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>수정일</th>
+                <th>보기/수정/삭제</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="post: ${contents}">
+                <td th:text="${post.postNo}"></td>
+                <td th:text="${post.title}"></td>
+                <td th:text="${post.writer}"></td>
+                <td th:text="${post.create_date}"></td>
+                <td th:text="${#strings.defaultString(post.update_date, '-')}"></td>
+                <td><button class="action-btn" th:onclick="|location.href='@{/board/view/}'+${post.postNo}|">보기</button></td>
+            </tr>
+            <!-- 추가 게시글 -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- 하단 푸터 불러오기 -->
+<div th:replace="fragments/footer :: footer"></div>
+</body>
