@@ -174,3 +174,112 @@ button {
 .action-btn:nth-child(2):hover {
     background-color: #d32f2f; /* 마우스 오버 시 빨간색 다크 */
 }
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 헤더 및 네비게이션 바 */
+header {
+    background-color: #000000;
+    padding: 10px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-bar {
+    list-style: none;
+    text-align: center;
+}
+
+.nav-bar li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav-bar a:hover {
+    text-decoration: underline;
+}
+
+/* 게시글 상세 보기 섹션 */
+.post-detail {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.post-detail h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #C60000;
+}
+
+/* 테이블 스타일 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center; /* 가로 가운데 정렬 */
+    vertical-align: middle; /* 세로 가운데 정렬 */
+}
+
+table th {
+    background-color: #C60000;
+    color: white;
+    text-align: center;
+}
+
+table td {
+    text-align: left; /* 콘텐츠는 좌측 정렬 */
+}
+
+/* 수정, 삭제 버튼 */
+.action-btn {
+    background-color: #2196F3; /* 수정 버튼은 파란색 */
+}
+
+.action-btn:hover {
+    background-color: #1976D2; /* 마우스 오버 시 더 진한 파란색 */
+}
+
+.action-btn:nth-child(2) {
+    background-color: #f44336; /* 삭제 버튼은 빨간색 */
+}
+
+.action-btn:nth-child(2):hover {
+    background-color: #d32f2f; /* 마우스 오버 시 더 진한 빨간색 */
+}
+
+/* 목록으로 버튼 */
+.home-btn {
+    background-color: #000000;
+}
+
+.home-btn:hover {
+    background-color: #333333;
+}
