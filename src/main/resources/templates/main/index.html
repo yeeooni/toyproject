@@ -1,3 +1,7 @@
+<th:block th:replace="fragments/config"/>
+<body>
+<!-- 상단 메뉴바 불러오기 -->
+<div th:replace="fragments/header :: header"></div>
 <!-- 메인 콘텐츠 영역 -->
 <section class="main-content">
     <div class="main-banner">
@@ -7,7 +11,11 @@
         <button>더 알아보기</button>
     </div>
 </section>
-
 <!-- 메인 게시판 영역 -->
+<!-- 하단 푸터 불러오기 -->
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+
+
 
 
